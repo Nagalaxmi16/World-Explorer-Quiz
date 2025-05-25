@@ -16,11 +16,11 @@ const quizData = [
   }
 ];
 
-const quizContainer = document.getElementById("quiz-container");
-const submitBtn = document.getElementById("submit-btn");
+const quizContainer = document.getElementById("quizcontainer");
+const submitBtn = document.getElementById("submitbutton");
 const resultContainer = document.getElementById("result");
-const getFactBtn = document.getElementById("get-fact-btn");
-const factContainer = document.getElementById("fact-container");
+const getFactBtn = document.getElementById("getfactbutton");
+const factContainer = document.getElementById("factcontainer");
 
 function loadQuiz() {
   quizContainer.innerHTML = "";
@@ -64,6 +64,7 @@ async function getCountryFact() {
     const response = await fetch("https://restcountries.com/v3.1/all");
     const countries = await response.json();
     const random = countries[Math.floor(Math.random() * countries.length)];
+
     const name = random.name.common;
     const capital = random.capital ? random.capital[0] : "Unknown";
     const region = random.region;
